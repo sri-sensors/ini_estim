@@ -1,0 +1,25 @@
+Metadata-Version: 1.0
+Name: ini-estim
+Version: 0.1
+Summary: Code for modeling electrical stimulation of nerve fibers
+Home-page: UNKNOWN
+Author: Lauren Grosberg
+Author-email: lauren.grosberg@sri.com
+License: SRI Proprietary
+Description: # EStim
+        
+        Code for modeling electrical stimulation of nerve fibers
+        
+        For developers:
+        --------------
+        Install by running (in setup.py folder)
+        > python -m pip install -e .
+        
+        Then you can import in python:
+        
+            import ini_estim
+           
+        or, for example:
+        
+            from ini_estim import spontaneous
+Platform: UNKNOWN

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>Hand pose dataset for Learning the signatures of the human grasp using a scalable tactile glove</title>
+		<meta name="description" content="Learning the signatures of the human grasp using a scalable tactile glove">
+		<meta name="author" content="Subramanian Sundaram, Petr Kellnhofer, Yunzhu Li, Jun-Yan Zhu, Antonio Torralba, Wojciech Matusik">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style>
+.font__weight--regular,
+html,
+body,
+input {
+  font-weight: 400;
+}
+.font__weight--medium,
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+.font__weight--semi-bold {
+  font-weight: 600;
+}
+.font__weight--bold {
+  font-weight: 700;
+}
+.font__size--xsmall {
+  font-size: 11px;
+}
+.font__size--small {
+  font-size: 14px;
+}
+.font__size--normal,
+html,
+body,
+input {
+  font-size: 16px;
+}
+.font__size--large {
+  font-size: 18px;
+}
+.font__size--xlarge {
+  font-size: 24px;
+}
+.font__size--xxlarge {
+  font-size: 30px;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #6d6e71;
+  font-size: 12pt;
+}
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+a {
+  color: #A31F34;
+  text-decoration: none;
+  background-color: transparent;
+}
+a:hover {
+    color: #D34F64
+}
+
+.clr {
+  clear: both;
+  margin: none;
+  padding: none;
+  border: none;
+}
+
+.bg-primary {
+    background-color: #a31f34 !important;
+}
+
+.container {
+	margin: 20px auto;
+}
+
+.container {
+  background: #fff;
+}
+.container > :first-child {
+  padding-top: 80px;
+  margin-top: -40px;
+}
+.container.home {
+  padding-top: 40px;
+}
+h1 {
+	text-align: center;
+	font-size: 350%;
+	color: #000000;
+		font-family: MyriadPro, 'Myriad Pro', 'Patua One', Helvetica, Arial, sans-serif;
+		margin-bottom: 30px;
+}
+
+
+h2 {
+	margin-bottom: 20px;
+    font-family: MyriadPro, 'Myriad Pro', 'Patua One', Helvetica, Arial, sans-serif;
+}
+
+.credits {
+  margin-top: -20px;
+  font-size: 80%;
+  text-align: center;
+  color: #bbb;
+}
+.credits hr {
+  padding-top: 0px !important;
+  margin-top: 20px !important;
+  margin-bottom: 60px;
+}
+.credits a {
+  color: #888;
+}
+
+.code {
+	background-color: #f0f0f0;
+	padding: 15px;
+}
+ul.text {
+	list-style-type: dot;
+	list-style-position: inside;
+}
+.symbol {
+	font-family: monospace;
+}
+		</style>
+    </head>
+
+	<body>
+
+			<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+					<a class="navbar-brand" href="//humangrasp.io">Touch</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					  <span class="navbar-toggler-icon"></span>
+					</button>
+				  
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					  <ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#content">Content</a>
+						</li>      
+						<li class="nav-item">
+							<a class="nav-link" href="#metadata">Metadata</a>
+						</li>                          
+					  </ul>
+					</div>
+				  </nav>
+
+
+        <div class="container home">
+			<h1>The hand pose dataset</h1>
+
+			<p>
+				This is description of our hand-pose dataset which was used to train and test the hand-pose identification in our paper <a href="//humangrasp.io">Learning the signatures of the human grasp using a scalable tactile glove</a>.
+			</p>
+			<p>
+				The dataset is provided for non-commercial use only. <a href="mailto:info@humangrasp.io">Contact us</a> with inquiries about commercial use. Read the <a href="http://humangrasp.io/license.html">licence</a> for more details.
+			</p>
+			
+		</div>
+		
+		<div class="container content">
+			<h2 id="content">Dataset content</h2>
+			<p>
+				The zip file of the dataset contains following structure:
+			</p>
+			<pre class="code">
+|
+|- <b>metadata.mat</b>						
+|- [batch]
+|     |- [recording]
+|          |- [000000...N].jpg
+|          |- viz
+|          |    |- [000000...N].jpg
+|          |- pressuredata.mat
+			</pre>
+			<p>
+				Where:
+			</p>
+			<ul class="text">
+				<li>
+						<b>metadata.mat</b> is the main data file with all the information needed for the experiemnts in our paper. Details bellow.
+				</li>
+				<li>
+						<b>[batch]</b> stands for the name of the batch folder that contains multiple recordings from the same recording session, e.g. "001"
+				</li>
+				<li>
+					<b>[recording]</b> stands for the name of the recording that contains a continous sequence of frames, e.g. "003-tea_box"
+				</li>
+				<li>
+					<b>[000000...N].jpg</b> are video frames corresponding to the recorded pressure maps (not used in our paper), e.g. "000452.jpg"
+				</li>
+				<li>
+					<b>viz/[000000...N].jpg</b> are downsized pairs of video images and corresponding pressure map visualizations. The pressure is visualized without spatial layout. The values are mapped from range 500 - 650 to range 0 - 1 in logarithmic space. The green bar bellow denotes validity of the frame for our neural network as described in the dataset preprocessing in the paper and corresponds to the flag "<a href="#metadata">hasValidLabel</a>".
+				</li>
+				<li>
+					<b>pressuredata.mat</b> is the raw recorded pressure data available for every recording. Contains timestamp <b>tStamp</b>, corresponding <b>frame</b> number and the pressure values <b>data</b> as <span class="symbol">int16</span> array of size <span class="symbol">Nx32x32</span> where <span class="symbol">N</span> is the frame count. The pressure values range between 500 and 1024.
+				</li>
+			</ul>
+		</div>
+
+		<div class="container metadata">
+			<h2 id="metadata">Metadata structure</h2>
+			<p>
+				The metadata.mat contains all the pressure values for all recordings as well as all the flags generated in the preprocessing step to filter valid frames. More details in the Methods section of our paper. The file is a matlab MAT-file. <b>Note, that it follows C (zero-based) indexing (unlike Matlab).</b> This means that in Matlab you have to access dictionaries with 1 additon, e.g. batches{batchId(55) + 1}.
+			</p>
+			<p>
+				The file contains:
+			</p>
+			<ul class="text">
+				<li><b>batches</b> - list of batch folder names, e.g. "001"</li>
+				<li><b>batchId</b> - per frame index reference to <b>batches</b> - zero-based</li>
+				<li><b>recordings</b> - list of recording folder names, e.g. "003-tea_box"</li>
+				<li><b>recordingId</b> - per frame index reference to <b>recordings</b> - zero-based</li>
+				<li><b>objects</b> - list of grasp names, e.g. "G2"</li>
+				<li><b>objectId</b> - per frame index reference to <b>objects</b> - zero-based</li>
+				<li><b>frame</b> - zero-based frame index corresponding to video image file names</li>
+				<li><b>ts</b> - relative frame timestamp in seconds since the first frame</li>
+				<li><b>pressure</b> - the pressure frame as a sequence of <span class="symbol">32x32</span> <span class="symbol">int16</span> values with range between 500 and 1024. Note only 548 pixels have a valid value corresponding to a physical sensor on the glove.</li>
+				<hr />
+				<li><b>splits</b> - definition of splits used in our experiment ("train" and "test")</li>
+				<li><b>splitId</b> - per frame index reference to <b>splits</b> (zero-based) defines if frame was for testing (1) or training (0)</li>
+				<li><b>isGrasp</b> - flag marking that the grasp is clearly developed based on the thresholding procedure described in "Methods/Hand pose"</li>
+				<li><b>isBalanced</b> - flag marking that the frame was used in the set subsampled to achieve uniform frame count per class as described in "Methods/Object identification"</li>
+			</ul>
+			<br />
+			<p>
+				This information is also useful to associate the video image with respective pressure frame. To read an image associated with frames stored on index 123 in Matlab do:
+				<pre class="code">
+load('metadata.mat');
+im = imread(fullfile(batches{batchId(123) + 1}, recordings{recordingId(123) + 1}, sprintf('%06d.jpg', frame(123))));
+fprintf('Showing object "%s".\n', objects{objectId(123) + 1});
+imshow(im);
+</pre>
+			</p>
+		</div>
+
+		<div class="container credits">
+			<br />
+			<br />
+			<hr />
+
+			<p>
+				© 2019 The Authors. The author's version of the work is posted here for your personal use. Not for redistribution. 
+			</p>
+
+			<br />
+			<br />
+		</div>
+    </body>
+</html>

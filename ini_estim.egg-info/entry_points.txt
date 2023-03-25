@@ -1,0 +1,10 @@
+[console_scripts]
+ini_estim = ini_estim.scripts.main:main
+ini_estim_config = ini_estim.scripts.config:main
+ini_estim_train = ini_estim.scripts.train:main
+plot_checkpoint = ini_estim.scripts.deprecated.plot_training_checkpoint:main
+train_autoencoder = ini_estim.scripts.deprecated.train_autoencoder:main
+train_decoder = ini_estim.scripts.deprecated.train_decoder:main
+train_encoder = ini_estim.scripts.deprecated.train_encoder:main
+train_mnist_encoder = ini_estim.scripts.deprecated.train_mnist_encoder:main
+

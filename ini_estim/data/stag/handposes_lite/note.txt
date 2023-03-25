@@ -1,0 +1,3 @@
+
+Please note that each recording contains a sequence of multiple different grasps. 
+This means that unlike in all other datasets there is no 1:1 mapping between the recording and the object/pose class.
